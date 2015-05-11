@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.AppTheme">
+    </style>
+    <style name="background">
+        <item name="android:background">#FFF6F6F6</item>
+    </style>
+</resources>

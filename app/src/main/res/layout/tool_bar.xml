@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white">
+    <ImageButton
+        android:id="@+id/ib_titleClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_setting_uncheck"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/tv_titleLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左边"
+        android:layout_toRightOf="@id/ib_titleClick"
+        android:layout_centerVertical="true"
+        style="@style/mainFront"/>
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_titleCenter"
+        android:text="中间"
+        android:layout_centerInParent="true"
+        style="@style/mainFront"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_titleRightR"
+        android:text="注册"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp"
+        android:layout_centerVertical="true"
+        style="@style/mainFront"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_titleRightL"
+        android:text="登陆"
+        android:layout_toLeftOf="@id/tv_titleRightR"
+        android:paddingRight="10dp"
+        android:layout_centerVertical="true"
+        style="@style/mainFront"/>
+
+</RelativeLayout>
