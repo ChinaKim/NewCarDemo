@@ -1,8 +1,9 @@
 package com.imageviewdimen.touchspring.newcardemo;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -64,15 +65,18 @@ public class MainActivity extends FragmentActivity {
      */
     private LocationClient mLocationClient;
 
-    private Handler mHandler = new Handler(new Handler.Callback() {
+    /*private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
             if(msg.what == 0x01){
-                tv_titleLeft.setText(msg.obj.toString());
+                if(msg.obj != null)
+                    tv_titleLeft.setText(msg.obj.toString());
+                else
+                    tv_titleLeft.setText("无锡");
             }
             return false;
         }
-    });
+    });*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,51 +103,48 @@ public class MainActivity extends FragmentActivity {
         tv_titleRightR = (TextView)findViewById(R.id.tv_titleRightR);
         tv_titleRightL = (TextView)findViewById(R.id.tv_titleRightL);
 
-        initLocation();
+
+
+        initLocationCity();
     }
 
     /**
      * 初始化所在城市
      */
-    private void initLocation() {
+    private void initLocationCity(){
         mLocationClient = ((LocationApplication)getApplication()).mLocationClient;
+        ((LocationApplication)getApplication()).tv_Addr = tv_titleLeft;
         InitLocation();
         mLocationClient.start();
-        String addr = mLocationClient.getLastKnownLocation().getAddrStr();
-        Message message =mHandler.obtainMessage();
-        message.what = 0x01;
-        message.obj =addr;
-        message.sendToTarget();
-
     }
 
 
-    private void initAdapter() {
+    private void initAdapter(){
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 hide(transaction);
                 setbar(checkedId);
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.rb_baoyang:
-                        if(fragment_bao ==null){
+                        if (fragment_bao == null) {
                             fragment_bao = new BaoyangFragment();
-                            transaction.add(R.id.fram_main,fragment_bao);
+                            transaction.add(R.id.fram_main, fragment_bao);
                         }
                         transaction.show(fragment_bao);
                         break;
                     case R.id.rb_jifen:
-                        if(fragment_ji == null){
+                        if (fragment_ji == null) {
                             fragment_ji = new JiFenFragment();
-                            transaction.add(R.id.fram_main,fragment_ji);
+                            transaction.add(R.id.fram_main, fragment_ji);
                         }
                         transaction.show(fragment_ji);
                         break;
                     case R.id.rb_my:
-                        if(fragment_my == null){
+                        if (fragment_my == null) {
                             fragment_my = new MyFragment();
-                            transaction.add(R.id.fram_main,fragment_my);
+                            transaction.add(R.id.fram_main, fragment_my);
                         }
                         transaction.show(fragment_my);
                         break;
@@ -210,5 +211,33 @@ public class MainActivity extends FragmentActivity {
         option.setIsNeedAddress(true);//返回的定位结果包含地址信息
         option.setNeedDeviceDirect(true);
         mLocationClient.setLocOption(option);
+
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mLocationClient != null){
+            mLocationClient.stop();
+        }
+    }
+
+    public void showDialog(Context context,final String addr1){
+
+        new AlertDialog.Builder(context).setTitle("提示").setMessage("系统定位您的城市在"+""+",是否切换？").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which){
+                tv_titleLeft.setText(addr1);
+
+            }
+        }).setNegativeButton("cancle", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).show();
+    }
+
+
 }

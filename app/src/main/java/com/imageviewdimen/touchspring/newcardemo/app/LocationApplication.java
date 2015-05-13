@@ -2,6 +2,7 @@ package com.imageviewdimen.touchspring.newcardemo.app;
 
 import android.app.Application;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -13,6 +14,7 @@ import com.baidu.location.LocationClient;
 public class LocationApplication extends Application {
     public LocationClient mLocationClient;
     private MyLocationListener mListener;
+    public  TextView tv_Addr;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -26,7 +28,7 @@ public class LocationApplication extends Application {
     class  MyLocationListener implements BDLocationListener {
         @Override
         public void onReceiveLocation(BDLocation location) {
-            Log.i("TAGLocation", "INF:");
+            Log.i("TAGLocation1", "INF:" +"in");
             if (location == null)
                 return ;
             StringBuffer sb = new StringBuffer(256);
@@ -50,8 +52,17 @@ public class LocationApplication extends Application {
                 sb.append(location.getAddrStr());
 
             }
-
-            Log.i("TAGLocation" ,"INF:"+ sb.toString());
+            setAddr(location.getCity());
+            Log.i("TAGLocation1" ,"INF:"+ location.getCity());
         }
     }
+
+
+    private void setAddr(String addr){
+        if(tv_Addr != null){
+            tv_Addr.setText(addr);
+        }
+    }
+
+
 }
