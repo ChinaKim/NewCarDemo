@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NewCarDemo.iml" filepath="$PROJECT_DIR$/NewCarDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oneKeyShare/oneKeyShare.iml" filepath="$PROJECT_DIR$/oneKeyShare/oneKeyShare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shareSDK/shareSDK.iml" filepath="$PROJECT_DIR$/shareSDK/shareSDK.iml" />
     </modules>
   </component>
 </project>
-

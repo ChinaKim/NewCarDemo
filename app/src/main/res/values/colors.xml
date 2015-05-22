@@ -2,4 +2,31 @@
 <resources>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#FF666666</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="gray_bg">#EBEBEB</color>
+    <color name="shopcart_bg">#F5F5F5</color>
+    <color name="gray_shape">#A9A9A9</color>
+    <color name="gray_home">#E4E4E4</color>
+    <color name="white_bg">#FBFBFB</color>
+    <color name="text_normal">#666666</color>
+    <color name="black">#000000</color>
+    <color name="orange_bg">#FF845B</color>
+    <color name="orange_normal">#FF8000</color>
+    <color name="green_bg">#5EAB2B</color>
+    <color name="orgin_bg">#5EAB2B</color>
+    <color name="green_bg_01">#417439</color>
+    <color name="green_check">#014526</color>
+    <color name="text_shopcart">#5A5A5A</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="white_text">#FFFAFA</color>
+    <color name="orange_coupon">#FF845B</color>
+    <color name="text_buy_title">#ff1a1a1a</color>
+    <color name="text_buy_normal">#ffaea59d</color>
+    <color name="text_price_red">#fffa5555</color>
+    <color name="product_bg">#E4F2F5</color>
+    <color name="gray_back">#EBEBEB</color>
+    <color name="gray_dialog_text">#818181</color>
+    <color name="gray_home_title">#F5F5F5</color>
 </resources>

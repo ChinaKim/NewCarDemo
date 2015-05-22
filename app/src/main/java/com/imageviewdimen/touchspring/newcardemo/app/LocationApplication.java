@@ -1,6 +1,7 @@
 package com.imageviewdimen.touchspring.newcardemo.app;
 
 import android.app.Application;
+import android.graphics.Color;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -21,7 +22,6 @@ public class LocationApplication extends Application {
         mLocationClient = new LocationClient(getApplicationContext());
         mListener = new  MyLocationListener();
         mLocationClient.registerLocationListener(mListener);
-
     }
 
 
@@ -61,6 +61,7 @@ public class LocationApplication extends Application {
     private void setAddr(String addr){
         if(tv_Addr != null){
             tv_Addr.setText(addr);
+            tv_Addr.setTextColor(Color.BLUE);
         }
     }
 
