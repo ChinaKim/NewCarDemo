@@ -4,7 +4,7 @@
     <string name="app_name">NewCarDemo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="product_sharetext">扫描二维码，你的朋友也可以下载抚商合和果贸城APP！</string>
+    <string name="product_sharetext">扫描二维码，你的朋友也可以NewCarDemoAPP！</string>
     <string name="weixin">微信</string>
     <string name="QQ">QQ</string>
     <string name="weibo">微博</string>

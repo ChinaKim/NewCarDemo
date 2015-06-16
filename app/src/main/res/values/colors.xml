@@ -29,4 +29,7 @@
     <color name="gray_back">#EBEBEB</color>
     <color name="gray_dialog_text">#818181</color>
     <color name="gray_home_title">#F5F5F5</color>
+    <color name="test">#dadbda</color>
+    <color name="black_bg">#FF1E1E1E</color>
+    <color name="blue_bg">#FF0094C9</color>
 </resources>

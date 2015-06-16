@@ -1,9 +1,7 @@
 package com.imageviewdimen.touchspring.newcardemo.app;
 
 import android.app.Application;
-import android.graphics.Color;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -15,20 +13,25 @@ import com.baidu.location.LocationClient;
 public class LocationApplication extends Application {
     public LocationClient mLocationClient;
     private MyLocationListener mListener;
-    public  TextView tv_Addr;
+    public static  float  tv_dirction;
     @Override
     public void onCreate() {
         super.onCreate();
+   Log.i("YOUKU", "INF:" + "Application");
         mLocationClient = new LocationClient(getApplicationContext());
         mListener = new  MyLocationListener();
         mLocationClient.registerLocationListener(mListener);
     }
 
 
+
+
+
+
     class  MyLocationListener implements BDLocationListener {
         @Override
         public void onReceiveLocation(BDLocation location) {
-            Log.i("TAGLocation1", "INF:" +"in");
+            Log.i("YOUKU", "INF:" +"in");
             if (location == null)
                 return ;
             StringBuffer sb = new StringBuffer(256);
@@ -52,18 +55,13 @@ public class LocationApplication extends Application {
                 sb.append(location.getAddrStr());
 
             }
-            setAddr(location.getCity());
-            Log.i("TAGLocation1" ,"INF:"+ location.getCity());
+            tv_dirction = location.getDirection() ;
+            Log.i("YOUKU", "INF:" + location.getDirection() + "");
+            Log.i("YOUKU" ,"Lati::"+ location.getLatitude()+"");
+            Log.i("YOUKU" ,"Long:::"+ location.getLongitude()+"");
         }
     }
 
-
-    private void setAddr(String addr){
-        if(tv_Addr != null){
-            tv_Addr.setText(addr);
-            tv_Addr.setTextColor(Color.BLUE);
-        }
-    }
 
 
 }

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_bg">
+
+
+            <RelativeLayout
+                android:id="@+id/rel_top"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp">
+                <ImageView
+                    android:id="@+id/img_tude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tude"
+                    />
+                <LinearLayout
+                    android:layout_toRightOf="@id/img_tude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/tv_latitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00'000'000"
+                        style="@style/transport_font"/>
+                    <TextView
+                        android:id="@+id/tv_longtitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00'000'000"
+                        style="@style/transport_font"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/height"
+                        />
+                    <TextView
+                        android:id="@+id/tv_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="3600"
+                        style="@style/transport_font"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="m"
+                        style="@style/transport_font"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/rel_bottom"
+                android:layout_below="@+id/rel_top">
+                    <ImageView
+                        android:id="@+id/compass_pointer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/compass"
+                        android:layout_gravity="center"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/compasstri"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="100dp"/>
+                <!--<TextView
+                    android:id="@+id/tv_direction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white_text"
+                    android:textSize="16sp"
+                    android:textColor="@color/blue_bg"
+                    />-->
+
+                <LinearLayout
+                    android:id="@+id/layout_angle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:gravity="center"/>
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_buttom"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btn_back"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:text="text"
+                    />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/rel_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ll_buttom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <FrameLayout
+                        android:layout_width="134dp"
+                        android:layout_height="134dp"
+                        >
+                        <ImageView
+                            android:id="@+id/img_pulse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/nyclearradiation"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:layout_marginBottom="45dp"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_nuclear"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="000.0"
+                                style="@style/transport_font"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="uSv/h"
+                                style="@style/transport_font"/>
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/img_speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/speed"/>
+                        <ImageView
+                            android:id="@+id/img_point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/speed_finger"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="15dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="67"
+                            android:layout_gravity="bottom|right"
+                            android:layout_marginBottom="23dp"
+                            android:layout_marginRight="50dp"
+                            android:textSize="25sp"
+                            style="@style/transport_font"/>
+                    </FrameLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

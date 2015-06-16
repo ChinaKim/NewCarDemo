@@ -84,11 +84,9 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
         initview();
         initAdapter();
-
     }
 
     private void initview() {
-
         radioGroup  = (RadioGroup)findViewById(R.id.rg_check);
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction= fragmentManager.beginTransaction();
@@ -113,7 +111,6 @@ public class MainActivity extends FragmentActivity {
      */
     private void initLocationCity(){
         mLocationClient = ((LocationApplication)getApplication()).mLocationClient;
-        ((LocationApplication)getApplication()).tv_Addr = tv_titleLeft;
         InitLocation();
         mLocationClient.start();
     }
